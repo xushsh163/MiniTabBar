@@ -193,6 +193,10 @@ import UIKit
     }
     
     @objc public func selectItem(_ selectedIndex: Int, animated: Bool = true) {
+        if (selectedIndex < 0 || selectedIndex >= self.itemViews.count) {
+            self.currentSelectedIndex = selectedIndex
+            return
+        }
         if !self.itemViews[selectedIndex].item.selectable {
             return
         }
