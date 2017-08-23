@@ -193,12 +193,12 @@ import UIKit
     }
     
     @objc public func selectItem(_ selectedIndex: Int, animated: Bool = true) {
-        if (selectedIndex < 0 || selectedIndex >= self.itemViews.count) {
-            self.currentSelectedIndex = selectedIndex
+        if (selectedIndex < 0 || selectedIndex >= self.itemViews.count) {           
             for (index, v) in self.itemViews.enumerated() {
                 v.deSelected((index == self.currentSelectedIndex), animated: animated);
                 v.setSelected((index == selectedIndex), animated: animated)
             }
+            self.currentSelectedIndex = selectedIndex
             return
         }
         if !self.itemViews[selectedIndex].item.selectable {
