@@ -167,7 +167,7 @@ import UIKit
             self.addSubview(itemView)
             i += 1
         }
-        self.selectItem(0, animated: true);
+        //self.selectItem(0, animated: true);
     }
     
     required public init?(coder aDecoder: NSCoder) {
